@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+
+\title{Определение скорости полета пули при помощи баллистического маятника}
+\date{}
+\author{Баргатин Михаил}
+
+\begin{document}
+    \maketitle
+    \pagenumbering{gobble}
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{Метод баллистического маятника, совершающего поступательные движения}
+
+    Вычислим скорость пули по отклонению баллистического маятника после попадания в него пули.
+    \newline
+    При попадании пули в маятник сохраняется импульс:
+    \begin{equation}
+        mv = (M + m)u
+    \end{equation}
+    где $m$ -- масса пули, $M$ -- масса маятника, $v$ -- скорость пули до попадания в маятник,
+    $u$ -- скорость маятника после застревания в нем пули.
+    \newline
+    Масса маятника много больше массы пули:
+    \begin{equation}
+        M \gg m
+    \end{equation}
+    \begin{equation}
+        mv \approx Mu
+    \end{equation}
+    \begin{equation}
+        v = \frac{M}{m}u
+    \end{equation}
+    При подъеме маятника сохраняется энергия:
+    \begin{equation}
+        \frac{Mu^2}{2} = Mgh
+    \end{equation}
+    \begin{equation}
+        u = \sqrt{2gh}
+    \end{equation}
+    где $h$ -- высота подъема маятника.
+    \newline
+    \begin{equation}
+        h = l(1 - \cos \alpha) = l(1 - \sqrt{1-\sin^2\alpha})
+    \end{equation}
+    где $\alpha$ -- угол, на который откланяется маятник, $l$ -- длина нити, на которой подвешен маятник.
+    \newline
+    Горизонтальное отклонение маятника $\Delta x$:
+    \begin{equation}
+        \Delta x = l\sin\alpha
+    \end{equation}
+    Отклонение маятника мало:
+    \begin{equation}
+        \alpha \ll 1
+    \end{equation}
+    \begin{equation}
+        h \approx l\left(\frac{\alpha^2}{2}\right)
+    \end{equation}
+    \begin{equation}
+        \Delta x \approx l\alpha
+    \end{equation}
+    \begin{equation}
+        \alpha = \frac{\Delta x}{l}
+    \end{equation}
+    \begin{equation}
+        h = \frac{\Delta x^2}{2l}
+    \end{equation}
+    Из (6) и (13) получаем:
+    \begin{equation}
+        u = \sqrt{\frac{g \Delta x^2}{l}} = \Delta x \sqrt{\frac{g}{l}}
+    \end{equation}
+    Из (4) и (14) получаем:
+    \begin{equation}
+        v = \Delta x \frac{M}{m} \sqrt{\frac{g}{l}}
+    \end{equation}
+
+    \section{Метод крутильного баллистического маятника}
+
+    Вычислим скорости пули по отклонение крутильного баллистического маятника после попадания в него пули.
+    \newline
+    При попадании пули в маятник его момент импульса $P$ становится равным:
+    \begin{equation}
+        P = I \omega = mvr
+    \end{equation}
+    \begin{equation}
+        v = \frac{I \omega}{mr}
+    \end{equation}
+    где $m$ -- масса пули, $v$ -- скорость пули до попадания в маятник, $I$ -- момент инерции маятника,
+    $\omega$ -- угловая скорость вращения маятника после попадания в него пули.
+    \newline
+    После попадания пули в маятник сохраняется энергия:
+    \begin{equation}
+        k \frac{\phi^2}{2} = I \frac{\omega^2}{2}
+    \end{equation}
+    где $k$ -- модуль кручения проволоки, маятника, $\phi$ -- максимальный угол, на который маятник откланяется.
+    \begin{equation}
+        \omega = \phi \sqrt{\frac{k}{I}}
+    \end{equation}
+    Из (17) и (19) получаем:
+    \begin{equation}
+        v = \phi \frac{\sqrt{kI}}{mr}
+    \end{equation}
+
+\end{document}
