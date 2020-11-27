@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage[parfill]{parskip}
+
+\title{Изучение колебаний струны}
+\date{}
+\author{Баргатин Михаил}
+
+\begin{document}
+    \maketitle
+    \pagenumbering{gobble}
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{Поперечные волны в струне}
+
+    Уравнение бегущей волны в струне:
+    \begin{equation}
+        s(x, t) = A \cos (x \frac {\omega} {u} - \omega t)
+    \end{equation}
+    где $A$ -- амплитуда волны, $\omega$ -- ее угловая частота, $u$ -- скорость ее распространения.
+    \newline
+    
+    Когда волна достигает одного из концов струны, она отражается и распространяется в противоположном
+    направлении. Отраженная и исходная волны интерферируют и образуют стоячую волну:
+    \begin{equation}
+        h(x, t) = A \cos (x \frac {\omega} {u} - \omega t) + A \cos (x \frac {\omega} {u} + \omega t + \phi)
+    \end{equation}
+    \begin{equation}
+        h(x, t) = 2A \cos (x \frac {\omega} {u} + \frac {\phi} {2}) \cos (\omega t + \frac {\phi} {2})
+    \end{equation}
+
+    Концы струны покоятся, найдем из этих соображений частоту колебаний струны $\nu$:
+    \begin{equation*}
+        x = 0
+    \end{equation*}
+    \begin{equation}
+        cos(\frac{\phi}{2}) = 0
+    \end{equation}
+    \begin{equation*}
+        \phi = \pi
+    \end{equation*}
+    \begin{equation*}
+        x = l
+    \end{equation*}
+    \begin{equation*}
+        n \in N
+    \end{equation*}
+    \begin{equation}
+        \frac {\omega} {u} l = n \pi
+    \end{equation}
+    \begin{equation*}
+        \nu = \frac {\omega} {2 \pi}
+    \end{equation*} 
+    \begin{equation}
+        \frac {2 \pi \nu}{u} l = n \pi
+    \end{equation}
+    \begin{equation}
+        \nu = n \frac {u} {2 l}
+    \end{equation}
+
+    \section{Распространение колебательного процесса в струне}
+
+    Рассмотрим вертикальные проекции сил, действующих на участок $\Delta x$ струны:
+    \begin{equation}
+        \rho \Delta x S \ddot h(x) = T(x + \Delta x) \sin \alpha (x + \Delta x) - T (x) \sin \alpha (x)
+    \end{equation}
+    где $\rho$ -- плотность материала струны, $S$ -- площадь ее поперечного сечения.
+    
+    Сила натяжения, действующая на участок струны $T(x)$:
+    \begin{equation}
+        T (x) = \sigma (x) S
+    \end{equation}
+    где $\sigma(x)$ -- напряжение струны.
+
+    Будем считать, что напряжение не меняется вдоль струны:
+    \begin{equation}
+        \sigma (x) = const = \sigma
+    \end{equation}
+    
+    И что $\alpha$ мал:
+    \begin{equation}
+        \tan \alpha (x) = h'(x)
+    \end{equation}
+    \begin{equation}
+        \sin \alpha (x) \approx \tan \alpha (x)
+    \end{equation}
+
+    И тогда:
+    \begin{equation}
+        \rho \Delta x S \ddot h(x) = \sigma S (h'(x + \Delta x) - h'(x))
+    \end{equation}
+    \begin{equation}
+        \ddot h(x) = \frac {\sigma} {\rho} \frac {h'(x + \Delta x) - h'(x)} {\Delta x}
+    \end{equation}
+
+    Перейдем к пределу при $\Delta x \longrightarrow 0$:
+    \begin{equation}
+        \frac{\partial^2 h}{\partial t^2} = \frac {\sigma} {\rho} \frac{\partial^2 h}{\partial x^2}
+    \end{equation}
+
+    Скорость распространения колебательного процесса внутри струны $u$:
+    \begin{equation}
+        \frac{\partial x^2}{\partial t^2} = \frac {\sigma} {\rho}
+    \end{equation}
+    \begin{equation}
+        u = \frac{\partial x}{\partial t} = \sqrt {\frac {\sigma} {\rho}}
+    \end{equation}
+
+    \section{Колебание струны}
+
+    Введем понятия погонной плотности $\rho_l$ и силы натяжения $F$:
+    \begin{equation*}
+        \rho_l = \rho S
+    \end{equation*}
+
+    \begin{equation*}
+        F = \sigma S
+    \end{equation*}
+
+    Тогда:
+    \begin{equation}
+        u = \sqrt {\frac {F} {\rho_l}}
+    \end{equation}
+
+\end{document}
