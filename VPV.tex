@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+\usepackage{hyperref}
+\usepackage{esvect}
+\usepackage{setspace}
+
+\begin{document}
+    \onehalfspacing
+    
+    Пусть два массивных тела массами $M_1$ и $M_2$ вращаются вокруг их общего центра масс по эллиптическим орбитам с угловой скоростью $\omega$ и расстоянием $L$.
+    Выберем в конкретный момент времени систему отсчета с началом отсчета в их центре масс, ось $x$ напривам от тела массой $M_1$ к телу  массой $M_2$,
+    ось $y$ направим перпендикулярно оси $x$. Тела в этой системе отсчета имеют координаты $-r_1$ и $r_2$ соответственно:
+    \[ M_1 r_1 = M_2 r_2 \]
+
+    Второй закон Ньютона для первого тела в этой системе отсчета:
+    \[ M_1 \ddot r_1 = -\frac{M_1 M_2 G}{L^2} + M_1 \omega^2 r_1 \]
+    \[ \frac{\ddot r_1}{r_1} = -\frac{M_2 G}{r_1 L^2} + \omega^2 = \omega^2 - \frac{\left( M_1 + M_2 \right) G}{L^3}\]
+    
+    Предположим, что есть точка с координатами $\vv{r} = (x;y)$, удовлетворяющая равенствам: 
+    \[ \frac{\ddot x}{x} = \frac{\ddot y}{y} = \frac{\ddot r_1}{r_1} \]
+    \[ \ddot{\vv{r}} = \vv{r} \frac{\ddot r_1}{r_1} \]
+    
+    Поместим в эту точку тело массой $m$, $m \ll M_1$, $m \ll M_2$. Запишем для нее второй закон Ньютона:
+    \[ \vv{d_1} = \begin{bmatrix} -r_1 - x \\ - y \end{bmatrix} \]
+    \[ \vv{d_2} = \begin{bmatrix} r_2 - x \\ - y \end{bmatrix} \]
+    \[ \vv{F_1} = \frac{mM_1G}{d_1^3} \vv{d_1} \]
+    \[ \vv{F_2} = \frac{mM_2G}{d_2^3} \vv{d_2} \]
+    \[ \vv{F_r} = m \omega^2 |\vv{r}| \hat{{\vv{r}}} = m \omega^2 \vv{r} \]
+    \[ m \ddot{\vv{r}} = \vv{F_1} + \vv{F_2} + \vv{F_r} \]
+    \[ m \vv{r} \left( \omega^2 - \frac{\left( M_1 + M_2 \right) G}{L^3} \right) =
+       \frac{mM_1G}{d_1^3} \vv{d_1} + \frac{mM_2G}{d_2^3} \vv{d_2} + m \omega^2 \vv{r}\]
+    \[ - \frac{\left( M_1 + M_2 \right) }{L^3} \vv{r} =
+       \frac{M_1}{d_1^3} \vv{d_1} + \frac{M_2}{d_2^3} \vv{d_2} \]
+
+    Перепишем для каждой оси поотдельности:
+    \[ -\frac{\left( M_1 + M_2 \right) }{L^3} x =
+       \frac{M_1}{d_1^3} (-r_1 - x) + \frac{M_2}{d_2^3} (r_2 - x) \]
+    
+    \[ -\frac{\left( M_1 + M_2 \right) }{L^3} y =
+       -\frac{M_1}{d_1^3} y - \frac{M_2}{d_2^3} y \]
+
+    Рассмотрим случай, когда $y \ne 0$:
+    \[ -\frac{\left( M_1 + M_2 \right) }{L^3} =
+       -\frac{M_1}{d_1^3} - \frac{M_2}{d_2^3} \]
+    \[ \frac{M_1 r_1}{d_1^3} = \frac{M_2 r_2}{d_2^3} \]
+    
+    \[ d_1 = d_2 \]
+    \[ (r_1 + x)^2 + y^2 = (r_2 - x)^2 + y^2\]
+    \[ |r_1 + x| = |r_2 - x| \]
+    \[ x = \frac{r_2 - r_1}{2} \]
+    \[ d_1 = d_2 = d = \sqrt{ \left(\frac{r_2 - r_1}{2}\right)^2 + y^2} \]
+
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} = \frac{M_1 + M_2}{d^3} \]
+    \[ d = L \]
+    \[ \left(r_2 - \frac{r_2 - r_1}{2}\right)^2 + y^2 = \left( r_2 + r_1 \right)^2 \]
+    \[ \left(\frac{r_2 + r_1}{2}\right)^2 + y^2 = \left( r_2 + r_1 \right)^2 \]
+    \[ y = \frac{\sqrt{3}}{2}L \]
+    
+    Теперь рассмотрим случай, когда $y = 0$:
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} x =
+       \frac{M_1}{|r_1 + x|^3} (r_1 + x) + \frac{M_2}{|x - r_2|^3} (x - r_2) \]
+
+    Такое уравнение можно решить только численными методами, или если сделать предположение, что $M_1 \gg M_2$.
+    Рассмотрим каждый из четырех вариантов расскрытия модуля.
+    Первый случай, когда маленькое тело слева от обоих больших тел:
+    \[ |r_1 + x| < 0 \land |x - r_2| < 0 \]
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} x =
+       -\frac{M_1}{(r_1 + x)^2} - \frac{M_2}{(x - r_2)^2} \]
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} x (r_1 + x)^2 (x - r_2)^2 =
+       - M_1 (x - r_2)^2 - M_2 (r_1 + x)^2 \]
+    \[ \frac{x(r_1 + x)^2}{L^3} = -1 \]
+    \[ x \approx -L \]
+    Второй и третий случай, когда маленькое тело находится справа от первого тела и поочередно слева и справа от меньшего тела. Решение будем искать в виде $x = L \mp l$
+    \[ |r_1 + x| > 0 \land |x - r_2| < 0 \]
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} (L - l) =
+       \frac{M_1}{(r_1 + L - l)^2} - \frac{M_2}{l^2} \]
+    \[ |r_1 + x| > 0 \land |x - r_2| > 0 \]
+    \[ \frac{\left( M_1 + M_2 \right) }{L^3} (L + l) =
+       \frac{M_1}{(r_1 + L + l)^2} + \frac{M_2}{l^2} \]
+    \[ \frac{2 \left( M_1 + M_2 \right) l}{L^3} = \frac{2M_2}{l^2} + \frac{M_1}{(r_1 + L + l)^2} - \frac{M_1}{(r_1 + L - l)^2} \]
+    \[ \frac{2 \left( M_1 + M_2 \right) l}{L^3} = \frac{2M_2}{l^2} + \frac{M_1\left((L - l)^2 - (L + l)^2\right)}{L^4} \]
+    \[ \frac{3 \left( M_1 + M_2 \right) l}{L^3} = \frac{M_2}{l^2} \]
+    \[ l^3 = \frac{M_2}{3 M_1} L^3 \]
+    \[ l = \sqrt[3]{\frac{M_2}{3 M_1}} L \]
+    Расскрытие $|r_1 + x| < 0 \land |x - r_2| > 0$ не имеет смысла, так как в таком случае малое тело левее левого тела, но правее правого.
+    
+
+
+\end{document}
